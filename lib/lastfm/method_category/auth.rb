@@ -5,7 +5,7 @@ class Lastfm
     end
 
     def get_session(token)
-      request_for_authentication('getSession', { :token => token })['session']['key']
+      request_for_authentication('getSession', { :token => token })['session']
     end
   end
 end
