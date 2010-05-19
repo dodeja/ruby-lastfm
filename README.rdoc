@@ -11,7 +11,8 @@ A Ruby interface for Last.fm Web Services v2.0
 
  # open 'http://www.last.fm/api/auth/?api_key=xxxxxxxxxxx&token=xxxxxxxx' and grant the application
 
- lastfm.session = lastfm.auth.get_session(token)
+ lastfm.session = lastfm.auth.get_session(token)['session']
+ lastfm.session['name'] # last.fm username
 
  lastfm.track.love('Hujiko Pro', 'acid acid 7riddim')
 

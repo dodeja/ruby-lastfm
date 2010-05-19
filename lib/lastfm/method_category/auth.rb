@@ -1,5 +1,6 @@
 class Lastfm
   class Auth < MethodCategory
+    
     def get_token
       request_for_authentication('getToken')['token']
     end
