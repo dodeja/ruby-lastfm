@@ -9,7 +9,6 @@ require 'rubygems'
 require 'digest/md5'
 require 'httparty'
 require "addressable/uri"
-require 'ap'
 
 class BadAuthError < StandardError; end
 class BadSessionError < StandardError; end
@@ -112,10 +111,8 @@ class Lastfm
     }
     uri = Addressable::URI.parse(u)
     uri.query_values = params
-    ap uri 
     response = HTTParty.post(uri)
     res = response.body.split("\n")
-    ap res
       
     if res[0] == 'BADSESSION'
       raise BadSessionError
@@ -137,10 +134,8 @@ class Lastfm
     }
     uri = Addressable::URI.parse(u)
     uri.query_values = params
-    ap uri 
     response = HTTParty.post(uri)
     res = response.body.split("\n")
-    ap res 
     if res[0] == 'BADSESSION'
       raise BadSessionError
     end
